@@ -118,6 +118,7 @@ background: linear-gradient(180deg, rgba(185,252,222,1) 0%, rgba(185,219,255,1) 
     width: 200px;
     /* margin-top: 20px; */
     height: 200px;
+    border: 3px solid #45968b;
 }
 
 .skills h1{
