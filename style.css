@@ -7,9 +7,11 @@ html {
     background: rgb(185,243,252);
 background: linear-gradient(180deg, rgba(185,243,252,1) 0%, rgba(185,252,222,1) 100%);
     display: flex;
-    padding: 0 380px;
-    justify-content: space-between;
+    /* padding: 0 380px; */
+    /* justify-content: space-between; */
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .intro {
@@ -68,7 +70,7 @@ h3 {
 } */
 
 .edu {
-    height: 100vh;
+    height:  100vh;
     /* background-color: #AEE2FF; */
     background: rgb(185,255,222);
 background: linear-gradient(180deg, rgba(185,252,222,1) 0%, rgba(185,219,255,1) 100%);
@@ -76,7 +78,7 @@ background: linear-gradient(180deg, rgba(185,252,222,1) 0%, rgba(185,219,255,1) 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 400px;
+    padding: 50px 200px;
     box-sizing: border-box;
 }
 
@@ -94,7 +96,7 @@ background: linear-gradient(180deg, rgba(185,252,222,1) 0%, rgba(185,219,255,1) 
 
 .edu-content {
     display: grid;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100px 1fr 1fr 1fr;
     gap: 10px;
@@ -126,7 +128,7 @@ background: linear-gradient(180deg, rgba(185,252,222,1) 0%, rgba(185,219,255,1) 
     height: 100vh;
     background: rgb(185,219,255);
 background: linear-gradient(180deg, rgba(185,219,255,1) 0%, rgba(185,197,255,1) 100%);
-    padding: 150px 300px;
+    padding: 150px 200px;
     box-sizing: border-box;
     display: flex;
     /* justify-content: center; */
@@ -137,11 +139,19 @@ background: linear-gradient(180deg, rgba(185,219,255,1) 0%, rgba(185,197,255,1) 
 }
 
 .skills-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* gap: 50px; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-column-gap: 80px;
-    grid-row-gap: 40px;
+    grid-row-gap: 40px; */
+}
+
+.skills-content > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .skills-content h2 {
@@ -155,11 +165,12 @@ background: linear-gradient(180deg, rgba(185,219,255,1) 0%, rgba(185,197,255,1) 
 .projects {
     height: 200vh;
     background: rgb(185,197,255);
-background: linear-gradient(180deg, rgba(185,197,255,1) 0%, rgba(248,224,250,1) 100%);
+    background: linear-gradient(180deg, rgba(185,197,255,1) 0%, rgba(248,224,250,1) 100%);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 200px 1fr 1fr 1fr;
-    padding: 50px 400px;
+    gap: 10px;
+    padding: 50px 200px;
     place-items: left;
     color: #474f94;
 }
@@ -170,8 +181,8 @@ background: linear-gradient(180deg, rgba(185,197,255,1) 0%, rgba(248,224,250,1) 
 }
 
 .projects img {
-    width: 600px;
-    height: 400px;
+    width: 37.5rem;
+    height: 25rem;
     border: 3px solid #474f94;
 }
 
@@ -194,18 +205,91 @@ background: linear-gradient(180deg, rgba(185,197,255,1) 0%, rgba(248,224,250,1) 
 }
 
 button:hover {
-    border-bottom: 2px solid  #939099;
+    /* border-bottom: 2px solid  #939099; */
+    outline: 2px solid #939099;
 }
 
 .footer {
-    height: 15vh;
+    height: 20vh;
     background: rgb(248,224,250);
     background: linear-gradient(180deg, rgba(248,224,250,1) 0%, rgba(250,224,224,1) 70%);
     display: flex;
     font-size: 1.5rem;
-    line-height: 1.5;
+    line-height: 2.5rem;
     justify-content: space-between;
     border-top: 1px solid rgb(223, 183, 233);
-    padding: 30px 200px;
+    padding: 10px 100px;
     color: #474f94;
+}
+
+@media (max-width: 1209px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1069px) {
+    .projects {
+        padding: 50px 150px;
+    }
+}
+
+@media (max-width: 969px) {
+    .projects {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr 1fr 1fr 1fr 1fr 1fr;
+        place-items: center;
+    }
+
+    .projects > h1 {
+        grid-column: 1;
+    }
+
+    .edu-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr 1fr 1fr 1fr 1fr 1fr;
+        place-items: center;
+        height: 100%;
+    }
+
+    .edu {
+        /* margin-top: -50px; */
+        height: 100%;
+    }
+
+    .edu-content h1{
+        grid-column: 1;
+    }
+
+    .skills-content {
+        flex-direction: column;
+    }
+
+    .skills-content > div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 751px) {
+    .projects {
+        padding: 50px 50px;
+    }
+
+    .intro {
+        justify-content: center;
+    } 
+
+    .skills {
+        padding: 150px 100px;
+    }
+
+    .projects img {
+        width: 25rem;
+        height: 15rem;
+    }
+
+    .footer {
+        padding: 10px 20px;
+    }
 }
